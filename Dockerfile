@@ -1,5 +1,6 @@
 FROM alpine
 MAINTAINER David Personette <dperson@gmail.com>
+ARG healthcheck_url
 
 # Install openvpn
 RUN apk --no-cache --no-progress upgrade && \

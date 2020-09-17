@@ -12,7 +12,7 @@ RUN apk --no-cache --no-progress upgrade && \
 COPY openvpn.sh /usr/bin/
 
 HEALTHCHECK --interval=60s --timeout=15s --start-period=120s \
-             CMD curl -LSs '${healthcheck_url}'
+             CMD curl -LSs "${healthcheck_url}"
 
 VOLUME ["/vpn"]
 

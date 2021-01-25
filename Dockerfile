@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.12
 MAINTAINER David Personette <dperson@gmail.com>
 ARG healthcheck_url
 

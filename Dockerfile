@@ -1,6 +1,5 @@
 FROM alpine:3.12
 MAINTAINER David Personette <dperson@gmail.com>
-ARG healthcheck_url
 
 # Install openvpn
 RUN apk --no-cache --no-progress upgrade && \
@@ -11,8 +10,8 @@ RUN apk --no-cache --no-progress upgrade && \
 
 COPY openvpn.sh /usr/bin/
 
-HEALTHCHECK --interval=1h --timeout=15s --start-period=120s \
-             CMD curl -LSs "${healthcheck_url}"
+HEALTHCHECK --interval=10m --timeout=15s --retries=1 \
+             CMD curl -LSs "https://www.google.com"
 
 VOLUME ["/vpn"]
 
